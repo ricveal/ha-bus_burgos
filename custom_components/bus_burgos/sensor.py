@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from contextlib import suppress
+from datetime import timedelta
 
 import bus_burgos
 import homeassistant.helpers.config_validation as cv
@@ -26,6 +27,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     }
 )
 
+SCAN_INTERVAL = timedelta(minutes=1)
 
 def setup_platform(
     hass: HomeAssistant,
