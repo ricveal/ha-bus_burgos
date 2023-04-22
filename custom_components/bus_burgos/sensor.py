@@ -52,9 +52,9 @@ class BusBurgosSensor(SensorEntity):
         self.data = data
         self._attr_name = name
 
-    def update(self) -> None:
+    async def async_update(self) -> None:
         """Get the latest data from the webservice."""
-        self.data.update()
+        await self.data.update()
         with suppress(TypeError):
             self._attr_native_value = self.data.info.seconds
 
@@ -69,7 +69,7 @@ class BusBurgos:
         self.route = route
         self.info = None
 
-    def update(self):
+    async def update(self):
         """Retrieve the information from API."""
-        bus_stop = bus_burgos.get_bus_stop(self.client, self.stop)
+        bus_stop = await bus_burgos.get_bus_stop(self.client, self.stop)
         self.info = bus_stop.get_next_bus(self.route)
