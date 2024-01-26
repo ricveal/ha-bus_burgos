@@ -3,9 +3,15 @@
   "name": "Bus Burgos",
   "config_flow": false,
   "documentation": "https://github.com/ricveal/ha-bus-burgos",
-  "requirements": ["bus-burgos==0.1.1"],
-  "codeowners": ["@ricveal"],
-  "loggers": ["bizkaibus"],
+  "requirements": [
+    "bus-burgos==0.1.2"
+  ],
+  "codeowners": [
+    "@ricveal"
+  ],
+  "loggers": [
+    "bizkaibus"
+  ],
   "iot_class": "cloud_polling",
-  "version": "1.0.1"
+  "version": "1.0.2"
 }
